@@ -68,7 +68,7 @@ with tab1:
             if email in st.secrets["allowed_emails"]:
                 cookies["auth"] = email
                 cookies["token"] = "123"
-                print(result["token"])
+                st.write(result["token"])
                 cookies.save()
                 st.rerun()
             else:

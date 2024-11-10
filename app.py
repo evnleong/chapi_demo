@@ -51,9 +51,12 @@ if "auth" not in st.session_state:
         payload += "=" * (-len(payload) % 4)
         payload = json.loads(base64.b64decode(payload))
         email = payload["email"]
-        st.session_state["auth"] = email
-        st.session_state["token"] = result["token"]
-        st.rerun()
+        if email in st.secrets["allowed_emails"]:
+            st.session_state["auth"] = email
+            st.session_state["token"] = result["token"]
+            st.rerun()
+        else:
+            st.write("Not Authorized User")
 else:
     st.write("You are logged in!")
     st.write(st.session_state["auth"])

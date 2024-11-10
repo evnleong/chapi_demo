@@ -1,4 +1,5 @@
 #Exclude virtual environment and variables 
 .venv/
 .env
+.streamlit/
 

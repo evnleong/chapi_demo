@@ -42,7 +42,7 @@ if "auth" not in st.session_state:
     )
 
     if result:
-        st.write(result)
+        # st.write(result)
         # decode the id_token jwt and get the user's email address
         id_token = result["token"]["id_token"]
         # verify the signature is an optional step for security

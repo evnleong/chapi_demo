@@ -9,8 +9,10 @@ import base64
 load_dotenv()
 
 # create an OAuth2Component instance
-CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID")
-CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET")
+# CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID")
+# CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET")
+CLIENT_ID = st.secrets["GOOGLE_CLIENT_ID"]
+CLIENT_SECRET = st.secrets["GOOGLE_CLIENT_SECRET"]
 AUTHORIZE_ENDPOINT = "https://accounts.google.com/o/oauth2/v2/auth"
 TOKEN_ENDPOINT = "https://oauth2.googleapis.com/token"
 REVOKE_ENDPOINT = "https://oauth2.googleapis.com/revoke"
